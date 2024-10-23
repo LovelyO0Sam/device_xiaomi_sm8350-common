@@ -42,9 +42,12 @@ function lib_to_package_fixup_vendor_variants() {
 
     case "$1" in
         com.qualcomm.qti.dpm.api@1.0 | \
-            libmmosal | \
-            vendor.qti.hardware.wifidisplaysession@1.0 | \
-            vendor.qti.imsrtpservice@3.0)
+        vendor.qti.hardware.qccsyshal@1.0 | \
+        libmmosal | \
+        vendor.qti.hardware.wifidisplaysession@1.0 | \
+        vendor.xiaomi.hardware.campostproc@1.0 | \
+        vendor.qti.diaghal@1.0 | \
+        vendor.qti.imsrtpservice@3.0)
             echo "$1-vendor"
             ;;
         libOmxCore | \
@@ -65,7 +68,7 @@ function lib_to_package_fixup() {
 setup_vendor "${DEVICE_COMMON}" "${VENDOR_COMMON:-$VENDOR}" "${ANDROID_ROOT}" true
 
 # Warning headers and guards
-write_headers "haydn lisa mars odin redwood renoir star venus"
+write_headers "haydn lisa mars odin redwood renoir star taoyao venus"
 
 # The standard common blobs
 write_makefiles "${MY_DIR}/proprietary-files.txt"
